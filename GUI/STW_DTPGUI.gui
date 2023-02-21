@@ -1,0 +1,176 @@
+if(isObject(STW_DTPGUI))
+{
+	STW_DTPGUI.delete();
+}
+
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(STW_DTPGUI) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 0";
+   extent = "640 480";
+   minExtent = "8 2";
+   enabled = "1";
+   visible = "1";
+   clipToParent = "1";
+
+   new GuiWindowCtrl() {
+      profile = "STWWindowProfile";
+      horizSizing = "center";
+      vertSizing = "center";
+      position = "230 203";
+      extent = "200 80";
+      minExtent = "8 2";
+      enabled = "1";
+      visible = "1";
+      clipToParent = "1";
+      command = "canvas.popDialog(STW_DTPGUI);";
+      accelerator = "escape";
+      text = "Donate To Player";
+      maxLength = "255";
+      resizeWidth = "1";
+      resizeHeight = "1";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "0";
+      canMaximize = "0";
+      minSize = "50 50";
+      closeCommand = "canvas.popDialog(STW_DTPGUI);";
+
+      new GuiSwatchCtrl() {
+         profile = "GuiDefaultProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "10 27";
+         extent = "95 19";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         color = "125 125 125 255";
+
+         new GuiMLTextCtrl() {
+            profile = "HUDChatTextEditProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "5 3";
+            extent = "16 14";
+            minExtent = "8 2";
+            enabled = "1";
+            visible = "1";
+            clipToParent = "1";
+            lineSpacing = "2";
+            allowColorChars = "0";
+            maxChars = "-1";
+            text = "<font:Lucida Console:14><color:FFFF00>$";
+            maxBitmapHeight = "-1";
+            selectable = "1";
+            autoResize = "1";
+         };
+         new GuiSwatchCtrl() {
+            profile = "GuiDefaultProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "21 3";
+            extent = "64 13";
+            minExtent = "8 2";
+            enabled = "1";
+            visible = "1";
+            clipToParent = "1";
+            color = "255 255 255 255";
+
+            new GuiTextEditSliderCtrl() {
+               profile = "GuiDefaultProfile";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               position = "0 0";
+               extent = "65 14";
+               minExtent = "8 2";
+               enabled = "1";
+               visible = "1";
+               clipToParent = "1";
+               variable = "$STW::GUI::DTP::Money";
+               maxLength = "7";
+               historySize = "0";
+               password = "0";
+               tabComplete = "0";
+               sinkAllKeyEvents = "0";
+               format = "%3.0f";
+               range = "100.000000 100000.000000";
+               increment = "100";
+            };
+         };
+      };
+      new GuiSwatchCtrl() {
+         profile = "GuiDefaultProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "10 50";
+         extent = "181 19";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         color = "125 125 125 255";
+
+         new GuiTextEditCtrl(STW_DTPGUI_UserName) {
+            profile = "GuiTextEditProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "31 1";
+            extent = "144 18";
+            minExtent = "8 2";
+            enabled = "1";
+            visible = "1";
+            clipToParent = "1";
+            maxLength = "255";
+            historySize = "0";
+            password = "0";
+            tabComplete = "0";
+            sinkAllKeyEvents = "0";
+         };
+         new GuiMLTextCtrl() {
+            profile = "HUDChatTextEditProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "1 2";
+            extent = "29 15";
+            minExtent = "8 2";
+            enabled = "1";
+            visible = "1";
+            clipToParent = "1";
+            lineSpacing = "2";
+            allowColorChars = "0";
+            maxChars = "-1";
+            text = "<font:lucida console:15>To: ";
+            maxBitmapHeight = "-1";
+            selectable = "1";
+            autoResize = "1";
+         };
+      };
+      new GuiBitmapButtonCtrl() {
+         profile = "BlockButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "120 27";
+         extent = "70 20";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         command = "clientCmdSTW_DonateToPlayer($STW::GUI::DTP::Money,STW_DTPGUI_UserName.getValue());";
+         text = "Donate >>";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "~/Client_SnowTrenchWars/ui/gui images/button1";
+         lockAspectRatio = "0";
+         alignLeft = "0";
+         alignTop = "0";
+         overflowImage = "0";
+         mKeepCached = "0";
+         mColor = "0 255 0 255";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

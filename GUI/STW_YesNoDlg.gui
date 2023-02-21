@@ -1,0 +1,100 @@
+if(isObject(STW_YesNoDlg))
+{
+	STW_YesNoDlg.delete();
+}
+
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(STW_YesNoDlg) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 0";
+   extent = "640 480";
+   minExtent = "8 2";
+   enabled = "1";
+   visible = "1";
+   clipToParent = "1";
+
+   new GuiWindowCtrl(STW_YesNoFrame) {
+      profile = "STWWindowProfile";
+      horizSizing = "center";
+      vertSizing = "center";
+      position = "145 150";
+      extent = "350 180";
+      minExtent = "8 2";
+      enabled = "1";
+      visible = "1";
+      clipToParent = "1";
+      maxLength = "255";
+      resizeWidth = "1";
+      resizeHeight = "1";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "0";
+      canMaximize = "0";
+      minSize = "50 50";
+
+      new GuiBitmapButtonCtrl(STW_YesNoDlg_YES) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "39 138";
+         extent = "106 30";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         command = "STW_YesNoDlg.yesPush();";
+         text = "YES";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "~/Client_SnowTrenchWars/ui/gui images/button1";
+         lockAspectRatio = "0";
+         alignLeft = "0";
+         alignTop = "0";
+         overflowImage = "0";
+         mKeepCached = "0";
+         mColor = "255 255 255 255";
+      };
+      new GuiBitmapButtonCtrl(STW_YesNoDlg_NO) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "207 138";
+         extent = "106 30";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         command = "STW_YesNoDlg.noPush();";
+         text = "NO";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "~/Client_SnowTrenchWars/ui/gui images/button1";
+         lockAspectRatio = "0";
+         alignLeft = "0";
+         alignTop = "0";
+         overflowImage = "0";
+         mKeepCached = "0";
+         mColor = "255 255 255 255";
+      };
+      new GuiMLTextCtrl(STW_YesNoText) {
+         profile = "GuiMLTextProfile";
+         horizSizing = "center";
+         vertSizing = "bottom";
+         position = "8 29";
+         extent = "333 14";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         maxBitmapHeight = "-1";
+         selectable = "1";
+         autoResize = "1";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

@@ -1,0 +1,137 @@
+if(isObject(STW_KickGui))
+{
+	STW_KickGui.delete();
+}
+
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(STW_KickGui) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 0";
+   extent = "640 480";
+   minExtent = "8 2";
+   enabled = "1";
+   visible = "1";
+   clipToParent = "1";
+
+   new GuiWindowCtrl() {
+      profile = "STWWindowProfile";
+      horizSizing = "center";
+      vertSizing = "center";
+      position = "182 170";
+      extent = "275 139";
+      minExtent = "8 2";
+      enabled = "1";
+      visible = "1";
+      clipToParent = "1";
+      text = "Kick";
+      maxLength = "255";
+      resizeWidth = "0";
+      resizeHeight = "0";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "0";
+      canMaximize = "0";
+      minSize = "50 50";
+      closeCommand = "canvas.popDialog(STW_KickGui);";
+
+      new GuiMLTextCtrl(STW_KickGui_User) {
+         profile = "GuiMLTextProfile";
+         horizSizing = "center";
+         vertSizing = "top";
+         position = "6 32";
+         extent = "262 32";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         text = "<just:center><font:impact:16>Kicking:<br><color:FFFF00>";
+         maxBitmapHeight = "-1";
+         selectable = "0";
+         autoResize = "1";
+      };
+      new GuiMLTextCtrl() {
+         profile = "GuiMLTextProfile";
+         horizSizing = "center";
+         vertSizing = "bottom";
+         position = "6 72";
+         extent = "262 16";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         text = "<just:center><font:impact:16>(optional) Reason:";
+         maxBitmapHeight = "-1";
+         selectable = "0";
+         autoResize = "1";
+      };
+      new GuiTextEditCtrl(STW_KickGui_Reason) {
+         profile = "GuiTextEditProfile";
+         horizSizing = "center";
+         vertSizing = "bottom";
+         position = "8 89";
+         extent = "259 18";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         maxLength = "255";
+         historySize = "0";
+         password = "0";
+         tabComplete = "0";
+         sinkAllKeyEvents = "0";
+      };
+      new GuiBitmapButtonCtrl() {
+         profile = "BlockButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "157 109";
+         extent = "110 24";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         command = "STW_KickGui.kickPlayer();";
+         text = "Kick >>";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "~/Client_SnowTrenchWars/ui/gui images/button1";
+         lockAspectRatio = "0";
+         alignLeft = "0";
+         alignTop = "0";
+         overflowImage = "0";
+         mKeepCached = "0";
+         mColor = "255 0 0 255";
+      };
+      new GuiBitmapButtonCtrl() {
+         profile = "BlockButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "7 109";
+         extent = "110 24";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         command = "canvas.popDialog(STW_KickGui);";
+         text = "<< Cancel";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "~/Client_SnowTrenchWars/ui/gui images/button1";
+         lockAspectRatio = "0";
+         alignLeft = "0";
+         alignTop = "0";
+         overflowImage = "0";
+         mKeepCached = "0";
+         mColor = "255 255 255 255";
+      };
+   };
+};
+//--- OBJECT WRITE END ---
